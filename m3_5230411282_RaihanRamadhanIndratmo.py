@@ -47,8 +47,12 @@ class Daftarmenu:
 
 def inputItem(jenis):
     nama = str(input(f"Masukkan nama {jenis}: "))
-    harga = int(input(f"Masukkan harga {jenis}: "))
-    return nama, harga
+    while True:
+        try:
+            harga = int(input(f"Masukkan harga {jenis}: "))
+            return nama, harga
+        except ValueError:
+            print("Error: Harga harus berupa angka. Silakan coba lagi.")
 
 
 def main():
